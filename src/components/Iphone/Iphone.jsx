@@ -18,9 +18,8 @@ function Iphone() {
                 }
 
                 const data = await response.json();
-                console.log("📦 Raw data from API:", data);
+                console.log("Raw data from API:", data);
 
-                // Safely extract the array regardless of backend response shape
                 const productList = Array.isArray(data) ? data : data.products || [];
 
                 setProducts(productList);
@@ -31,11 +30,10 @@ function Iphone() {
             }
         };
 
-        // 2. Call the async function
+        // Call the async function
         fetchProducts();
     }, []);
 
-    console.log("🎨 Component Rendering. Current state:", products);
 
     if (loading) {
         return <div className="text-center top-100">Loading products...</div>;

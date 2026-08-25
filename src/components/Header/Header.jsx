@@ -13,7 +13,7 @@ function Header() {
 					<button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target=".navbar-collapse">
 						☰
 					</button>
-					<a className="navbar-brand mx-auto" href="#"><img src={logo} /></a>
+					<a className="navbar-brand mx-auto" href="/"><img src={logo} /></a>
 
 					<div className="navbar-collapse collapse">
 						<ul className="navbar-nav nav-justified w-100 nav-fill">

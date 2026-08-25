@@ -4,11 +4,11 @@ import { useParams, Link } from "react-router-dom";
 function SingleProduct() {
     const { id } = useParams(); // Reads the ID from /iphone/:id (e.g., "1")
     const [product, setProduct] = useState(null);
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchProduct = async () => {
             try {
+                // Call the specific backend endpoint: /product-list/:product_id
                 const response = await fetch(`http://localhost:5000/product-list/${id}`);
 
                 if (!response.ok) {
@@ -27,13 +27,12 @@ function SingleProduct() {
             } catch (error) {
                 console.error("Failed to fetch product:", error);
                 setProduct(null);
-            } finally {
-                setLoading(false);
             }
         };
 
         fetchProduct();
     }, [id]);
+
 
     if (!product || Object.keys(product).length === 0) {
         return (
@@ -68,7 +67,7 @@ function SingleProduct() {
                         <div className="links-wrapper">
                             <ul>
                                 <li>
-                                    <Link to="/iphone">Back to iPhone list</Link>
+                                    <Link to="/iphone">← Back to iPhone list</Link>
                                 </li>
                             </ul>
                         </div>

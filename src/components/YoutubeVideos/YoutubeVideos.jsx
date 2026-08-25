@@ -3,9 +3,12 @@ import "./YoutubeVideos.css"
 
 const YoutubeVideos = () => {
     const [YoutubeVideo, setYoutubeVideo] = useState()
+    const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
+    console.log("Vite API Key:", apiKey);
 
     useEffect(() => {
-        fetch('https://www.googleapis.com/youtube/v3/search?key=AIzaSyDzu_N7V4jDuihqY68WwZ3aR4Nnk5G376c&channelId=UCE_M8A5yxnLfW0KghEeajjw&part=snippet,id&order=date&maxResults=8')
+
+        fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=UCE_M8A5yxnLfW0KghEeajjw&part=snippet,id&order=date&maxResults=8`)
             .then((data) => data.json()).then((data) => {
                 const youTubeVideoData = data.items
                 setYoutubeVideo(youTubeVideoData)
@@ -13,14 +16,14 @@ const YoutubeVideos = () => {
     }
         , []);
     return (
-        <div  className="youtube-videos-wrapper">
+        <div className="youtube-videos-wrapper">
             <div className="container">
                 <div className="title-wrapper text-center">
                     <h2>Latest Videos</h2>
                 </div>
 
                 <div className="row">
-                    {YoutubeVideo?.map((singleVideo,i) => {
+                    {YoutubeVideo?.map((singleVideo, i) => {
                         const vidId = singleVideo.id.videoId;
                         const vidLink = `https://www.youtube.com/watch?v=${vidId}`;
 
