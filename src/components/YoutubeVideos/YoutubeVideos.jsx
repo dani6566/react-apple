@@ -4,7 +4,6 @@ import "./YoutubeVideos.css"
 const YoutubeVideos = () => {
     const [YoutubeVideo, setYoutubeVideo] = useState()
     const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
-    console.log("Vite API Key:", apiKey);
 
     useEffect(() => {
 
