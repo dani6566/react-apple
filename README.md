@@ -1,16 +1,44 @@
-# React + Vite
+# Apple Website Clone (Full-Stack React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A full-stack replica of Apple's product showcase website. This project includes dynamic routing, single-product details, YouTube Data API integration for the latest media releases, and a custom Node.js/Express backend connected to a database.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+* **Responsive Design:** Apple-inspired UI optimized for desktop, tablet, and mobile devices.
+* **Dynamic Product Routing:** Dedicated product listing (`/iphone`) and dynamic single-item pages (`/iphone/:id`) using React Router.
+* **YouTube Data API Integration:** Fetches and displays the latest videos dynamically from Apple's official YouTube channel.
+* **Custom Backend API:** Express.js REST API providing endpoints for products, product descriptions, and pricing data.
+* **Error Handling:** Custom 404 page for unmatched routes and fallback UI states for data fetching.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+* **Frontend:** React.js, Vite, React Router v6, Bootstrap / CSS3
+* **Backend:** Node.js, Express.js, MySQL (or ORM/Database)
+* **External APIs:** Google Cloud YouTube Data API v3
+* **Environment Management:** `dotenv`
+
+---
+
+## 📁 Project Structure
+
+```text
+apple-clone/
+├── client/                     # Frontend (React + Vite)
+│   ├── public/
+│   ├── src/
+│   │   ├── components/        # UI & feature components (Header, Footer, Iphone, etc.)
+│   │   ├── App.jsx            # Route definitions
+│   │   └── main.jsx           # Entry point
+│   ├── .env
+│   └── package.json
+│
+└── server/                     # Backend (Node + Express)
+    ├── controllers/           # Request handlers
+    ├── routes/                # Express API routes
+    ├── config/                # Database connection
+    ├── app.js                 # Server entry point
+    └── package.json
