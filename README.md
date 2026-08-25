@@ -20,25 +20,3 @@ A full-stack replica of Apple's product showcase website. This project includes 
 * **Backend:** Node.js, Express.js, MySQL (or ORM/Database)
 * **External APIs:** Google Cloud YouTube Data API v3
 * **Environment Management:** `dotenv`
-
----
-
-## 📁 Project Structure
-
-```text
-apple-clone/
-├── client/                     # Frontend (React + Vite)
-│   ├── public/
-│   ├── src/
-│   │   ├── components/        # UI & feature components (Header, Footer, Iphone, etc.)
-│   │   ├── App.jsx            # Route definitions
-│   │   └── main.jsx           # Entry point
-│   ├── .env
-│   └── package.json
-│
-└── server/                     # Backend (Node + Express)
-    ├── controllers/           # Request handlers
-    ├── routes/                # Express API routes
-    ├── config/                # Database connection
-    ├── app.js                 # Server entry point
-    └── package.json
